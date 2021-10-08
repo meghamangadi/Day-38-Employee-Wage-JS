@@ -1,4 +1,4 @@
-console.log("Welcome to Employee Wage Computation Program");
+console.log("Welcome to the Employee Wage Computation Program");
 
 const IS_ABSENT = 0;
 
