@@ -102,3 +102,24 @@ console.log("Is parttimeWageArray truely holds Parttime Wage: " + partTimeWageAr
 let partTimeWageFirstOccurance = dayAndDailyWageMapArray.find(partTimeWageDay);
 console.log("\nfirst Occurence of Part Time Wage(80) on :");
 console.log(partTimeWageFirstOccurance);
+
+//  The Number of Days Employee Worked 
+
+
+function totalFullTimeWorked(numOfFullTimeDays, dailyWage) {
+    if (dailyWage == 160)
+        return numOfFullTimeDays + 1;
+    return numOfFullTimeDays;
+}
+function totalPartTimesWorked(numOfPartTimeDays, dailyWage) {
+    if (dailyWage == 80)
+        return numOfPartTimeDays + 1;
+    return numOfPartTimeDays;
+}
+
+let partTimeWorkedDays = empDailyWageArray.reduce(totalFullTimeWorked, 0);
+console.log("Employee Worked Part time for " + partTimeWorkedDays + " Days");
+let fullTimeWorkedDays = empDailyWageArray.reduce(totalPartTimesWorked, 0);
+console.log("Employee Worked Full time for " + fullTimeWorkedDays + " Days");
+let totalDaysWorked = fullTimeWorkedDays + partTimeWorkedDays;
+console.log("Employee Total Worked  for " + totalDaysWorked + " Days");
