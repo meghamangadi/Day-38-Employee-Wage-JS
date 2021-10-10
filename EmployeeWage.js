@@ -40,7 +40,7 @@ console.log("Daily Employee Wage stored in an Array:\n" + empDailyWageArray);
 console.log(" Total Employee Wage : " + empWage + "\n  Total Employee Work Hours: " + totalEmpHrs
     + "\n Total Working Days: " + totalWorkigDays);
 
-// For Each Method
+//  Each Method
 let totalEmpWage = 0;
 function sum(dailyWage) {
     totalEmpWage += dailyWage;
@@ -61,10 +61,18 @@ console.log("\nUsing Reduce Method, Total Wage: " + totalEmpWageUsingReduce);
 let counter = 0;
 function dayAndDailyWageMap(dailyWage) {
     counter++;
-    return counter + " -> " + dailyWage;
+    return "Day" + counter + " -> " + dailyWage;
 }
 let dayAndDailyWageMapArray = new Array();
 dayAndDailyWageMapArray = empDailyWageArray.map(dayAndDailyWageMap);
 console.log("\nUsing Map Printing Day with DailyWage\n");
 console.log(dayAndDailyWageMapArray);
 
+// Filter function
+
+function fullTimeWageDay(dailyWage) {
+    return dailyWage.includes("160");
+}
+let fullTimeWageArray = dayAndDailyWageMapArray.filter(fullTimeWageDay);
+console.log("\nUsing Filter Storing Only FullTimewage into Array\n");
+console.log(fullTimeWageArray);
