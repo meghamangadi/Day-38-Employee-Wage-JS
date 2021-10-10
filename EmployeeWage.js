@@ -12,6 +12,7 @@ const MAX_WORKING_HOURS = 160;
 let empDailyWageArray = new Array();
 let totalEmpHrs = 0;
 let totalWorkigDays = 0;
+let empDailyWageMap = new Map();
 
 function getWorkingHrs(employeeCheck) {
     switch (employeeCheck) {
@@ -123,3 +124,13 @@ let fullTimeWorkedDays = empDailyWageArray.reduce(totalPartTimesWorked, 0);
 console.log("Employee Worked Full time for " + fullTimeWorkedDays + " Days");
 let totalDaysWorked = fullTimeWorkedDays + partTimeWorkedDays;
 console.log("Employee Total Worked  for " + totalDaysWorked + " Days");
+
+
+// Storing Day , DailyWage along With Total Wage in a Map
+
+console .log(empDailyWageMap);
+function totalWages(totalWages,dailyWage){
+    return totalWages + dailyWage ;
+}
+
+console.log("Employee Wage Map totalHours: "+ Array.from(empDailyWageMap.values()).reduce(totalWages,0));
