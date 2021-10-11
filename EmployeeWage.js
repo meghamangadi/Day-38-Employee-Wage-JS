@@ -13,6 +13,7 @@ let empDailyWageArray = new Array();
 let totalEmpHrs = 0;
 let totalWorkigDays = 0;
 let empDailyWageMap = new Map();
+let empDailyHoursMap = new Map();
 
 function getWorkingHrs(employeeCheck) {
     switch (employeeCheck) {
@@ -128,9 +129,25 @@ console.log("Employee Total Worked  for " + totalDaysWorked + " Days");
 
 // Storing Day , DailyWage along With Total Wage in a Map
 
-console .log(empDailyWageMap);
-function totalWages(totalWages,dailyWage){
-    return totalWages + dailyWage ;
+console.log(empDailyWageMap);
+function totalWages(totalWages, dailyWage) {
+    return totalWages + dailyWage;
 }
 
-console.log("Employee Wage Map totalHours: "+ Array.from(empDailyWageMap.values()).reduce(totalWages,0));
+console.log("Employee Wage Map totalHours: " + Array.from(empDailyWageMap.values()).reduce(totalWages, 0));
+
+
+// calculate totalWage and total hours worked using arrow function 
+
+
+let findTotal = (totalVal, currentVal) => {
+    return totalVal + currentVal;
+}
+
+console.log("Employee Daily Hours map")
+console.log(empDailyHoursMap);
+console.log(Array.from(empDailyHoursMap.values()).reduce(findTotal, 0));
+
+console.log("Employee Daily Wage map")
+console.log(empDailyWageMap);
+console.log(Array.from(empDailyWageMap.values()).reduce(findTotal, 0));
